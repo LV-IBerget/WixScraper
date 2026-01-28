@@ -1,0 +1,4 @@
+# Inferred from wixscraper.py
+pyppeteer>=1.0.2
+requests>=2.28.0
+Pillow>=9.0.0

@@ -1,0 +1,11 @@
+name: wixscraper
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.9
+  - pip
+  - pip:
+    - pyppeteer>=1.0.2
+    - requests>=2.28.0
+    - Pillow>=9.0.0

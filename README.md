@@ -74,6 +74,51 @@ To run Wix Scraper for any Wix website, you need to set up a configuration file 
 - `metatags`: This is a dictionary containing the metadata of each page on the website. This includes the title, description, keywords, canonical URL, image URL, and author of each page.
 - `mapData`: This is the data required to display a map on the website. This includes the latitude and longitude of the location, the zoom level of the map, and the details of the map marker.
 
+## Setup
+
+### Conda (recommended)
+
+Create the environment:
+
+```bash
+conda env create -f environment.yml
+```
+
+**Windows PowerShell:**
+```powershell
+# Option 1: Use conda run (works without initialization)
+conda run -n wixscraper python wixscraper.py
+
+# Option 2: Initialize conda for PowerShell (one-time setup)
+conda init powershell
+# Then restart PowerShell and use:
+conda activate wixscraper
+python wixscraper.py
+
+# Option 3: Use the environment's Python directly
+C:\Users\<username>\miniconda3\envs\wixscraper\python.exe wixscraper.py
+```
+
+**Windows CMD / Git Bash / macOS / Linux:**
+```bash
+conda activate wixscraper
+python wixscraper.py
+```
+
+### pip
+
+Alternatively, use a virtual environment and `requirements.txt`:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate   # Windows
+# source .venv/bin/activate   # macOS/Linux
+pip install -r requirements.txt
+python wixscraper.py
+```
+
+**Note:** The script launches Microsoft Edge at `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`. On other systems or install paths, edit the `executablePath` in `wixscraper.py` (around line 649).
+
 ## Usage
 
 To run Wix Scraper, first fill in the configuration file. Then, use the following command:
